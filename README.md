@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Конфигурация
 
-Things you may want to cover:
+* Ruby version - 2.5
+* Rails version - 5.2.3
 
-* Ruby version
+База данных
+* PostgreSql - version 11.5
+* database: apress_base
+* username: apress_user
+* password: apressuser
 
-* System dependencies
+Порядок развертывания
 
-* Configuration
+* bundle install
+* Запусти миграции - rails db:migrate
+* Запусти сиды - rails db:seed
+* Запусти тесты - rspec
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
