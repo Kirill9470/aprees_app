@@ -1,0 +1,29 @@
+<div>
+  <div><h1><%= title %></h1></div>
+  <div>
+    <%= form_for post, url: calc_correct_url(url), method: mthd do |f| %>
+
+      <%= render 'shared/error_block', specimen: post if post.errors.any? %>
+
+      <% unless post.persisted? %>
+        <div>
+          <div>Имя:</div>
+          <div><%= f.text_field :name %></div>
+        </div>
+      <% end %>
+
+      <div>
+        <div>Заголовок:</div>
+        <div><%= f.text_field :title %></div>
+      </div>
+
+      <div>
+        <div>Текст:</div>
+        <div><%= f.text_area :content %></div>
+      </div>
+
+      <%= f.submit 'Создать пост' %>
+
+    <% end %>
+  </div>
+</div>

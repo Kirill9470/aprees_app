@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  prepared_statements: false
+
+development:
+  <<: *default
+  database: apress_base
+  username: apress_user
+  password: apressuser
+
+test:
+  <<: *default
+  database: apress_base
+  username: apress_user
+  password: apressuser
+
+production:
+  <<: *default
+  database: apress_base
+  username: apress_user
+  password: apressuser

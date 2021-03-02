@@ -1,0 +1,6 @@
+<div><%= link_to "#{i}. #{post['name']}", "#{name}", id: "item-#{post['name']}" %></div>
+<div style="margin-left: 20px">
+  <% post['children'].each_with_index do |post, index| %>
+    <%= render 'posts/shared/node', post: post, i: "#{i}.#{index + 1}", name: "#{name}/#{post['name']}" %>
+  <% end %>
+</div>

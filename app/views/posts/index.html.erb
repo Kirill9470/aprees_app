@@ -1,0 +1,18 @@
+<div style="margin: 15px">
+  <div style="margin-bottom: 20px">
+    <div style="display: inline-flex">
+      <div><h1>Приложение apress. Дерево постов</h1></div>
+      <div style="margin: auto 0 auto 10px">
+        (<%= link_to 'Добавить новый корневой пост', new_root_post_path, id: 'new-form' %>)
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <% @posts.each_with_index do |post, index| %>
+      <div>
+        <%= render 'posts/shared/node', post: post, i: index + 1, name: post['name'] %>
+      </div>
+    <% end %>
+  </div>
+</div>

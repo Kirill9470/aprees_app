@@ -1,0 +1,5 @@
+<%= render 'form',
+           title: 'Редактирование записи',
+           post: @post,
+           url: "#{@post.create_ancestors_url}/#{@post.name}",
+           mthd: 'put' %>

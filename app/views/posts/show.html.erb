@@ -1,0 +1,21 @@
+<div style="margin: 15px">
+  <div style="margin-bottom: 20px">
+    <div style="display: inline-flex">
+      <div><h1><%= @post.title %></h1></div>
+      <div style="margin: auto 0 auto 10px">
+        (<%= link_to 'Редактировать', "#{@post.create_ancestors_url}/#{@post.name}/edit", id: 'edit-link' %> |
+        <%= link_to 'Удалить', "#{@post.create_ancestors_url}/#{@post.name}", method: :delete, id: 'delete-link' %> |
+        <%= link_to 'Добавить дочерний пост', "#{@post.create_ancestors_url}/#{@post.name}/new", id: 'add-child-link' %>)
+      </div>
+    </div>
+    <div class="content"><%= format_text(@post.content) %></div>
+  </div>
+
+  <div>
+    <% @children.each_with_index do |post, index| %>
+      <div>
+        <%= render 'posts/shared/node', post: post, i: index + 1, name: "#{@post.name}/#{post['name']}" %>
+      </div>
+    <% end %>
+  </div>
+</div>
